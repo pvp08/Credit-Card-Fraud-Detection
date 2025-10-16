@@ -17,3 +17,8 @@ Place it inside the `data/` folder before running the notebook or app.
 ---
 
 ## 📊 Key Metrics
+|       Model        | Accuracy | F1 Score | ROC-AUC |
+|--------------------|----------|----------|---------|
+| Logistic Regression| 0.992    | 0.87     | 0.987   |
+| Random Forest      | 0.999    | 0.93     | 0.997   |
+| XGBoost            | 0.999    | 0.94     | 0.998   |

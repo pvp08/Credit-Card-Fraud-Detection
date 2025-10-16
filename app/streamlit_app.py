@@ -39,12 +39,11 @@ with col1:
     amount = st.slider("💰 Transaction Amount ($)", 0.0, 2500.0, 100.0)
 
 # Right column inputs (V1–V28)
-with col2:
-    st.caption("Enter anonymized PCA components (V1–V28)")
-    v_features = [st.number_input(f"V{i}", value=0.0, step=0.001, format="%.3f") for i in range(1, 29)]
+# Automatically fill PCA components with mean values (0.0 for simplicity)
+v_features = np.zeros(28)  # 28 PCA components
 
 # Combine all features
-input_data = np.array([time] + v_features + [amount]).reshape(1, -1)
+input_data = np.concatenate(([time, amount], v_features)).reshape(1, -1)
 
 # ---- PREDICTION ----
 st.markdown("---")
